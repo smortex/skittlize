@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Romain Tartière']
   spec.email         = ['romain@blogreen.org']
 
-  spec.summary       = 'A library for coloring .'
+  spec.summary       = 'A library for coloring strings.'
   spec.homepage      = 'https://github.com/smortex/skittlize'
   spec.license       = 'MIT'
 

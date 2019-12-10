@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/smortex/skittlize.svg?branch=master)](https://travis-ci.com/smortex/skittlize)
 
-Humans are bad at spotting differences in similar text strings.  Help them with colors!  Each skittleized String is colored base on the content of the text itself, making it easier to spot recurring words in a bunch of data.  This is particullary useful when processing reports formatted as tables in text.
+Humans are bad at spotting differences in similar text strings.  Help them with colors!  Each skittlized String is colored base on the content of the text itself, making it easier to spot recurring words in a bunch of data.  This is particullary useful when processing reports formatted as tables in text.
 
 ![RAW data without color](raw.png) ![Skittlized data](skittlized.png)
 
