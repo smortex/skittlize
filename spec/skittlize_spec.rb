@@ -1,6 +1,7 @@
 RSpec.describe Skittlize do
   describe 'String' do
     let(:original) { 'Hello World' }
+
     describe '#skittlize' do
       let(:subject) { original.skittlize }
       it { is_expected.to eq("\033[38;5;96mHello World\033[0m") }
@@ -9,12 +10,13 @@ RSpec.describe Skittlize do
         expect(original).to eq('Hello World')
       end
     end
+
     describe '#skittlize!' do
       let(:subject) { original.skittlize! }
       it { is_expected.to eq("\033[38;5;96mHello World\033[0m") }
       it 'should replace the original Object' do
         subject
-        expect(original).to eq("\033[38;5;96mHello World\033[0m")
+        expect(original).to_not eq('Hello World')
       end
     end
   end
