@@ -8,7 +8,7 @@ require 'github_changelog_generator/task'
 GitHubChangelogGenerator::RakeTask.new :changelog do |config|
   config.user = 'smortex'
   config.project = 'skittlize'
-  config.future_release = Skittlize::VERSION
+  config.future_release = "v#{Skittlize::VERSION}"
 end
 
 task default: :spec
