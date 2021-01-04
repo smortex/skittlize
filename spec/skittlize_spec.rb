@@ -2,6 +2,11 @@ RSpec.describe Skittlize do
   describe 'String' do
     let(:original) { 'Hello World' }
 
+    describe '#skittle_color' do
+      let(:subject) { original.skittle_color }
+      it { is_expected.to eq(96) }
+    end
+
     describe '#skittlize' do
       let(:subject) { original.skittlize }
       it { is_expected.to eq("\033[38;5;96mHello World\033[0m") }
