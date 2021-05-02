@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 RSpec.describe String do
-  let(:hello_world) { 'Hello World' }
+  let(:hello_world) { 'Hello World'.dup }
   let(:a) { 'a' }
   let(:b) { 'b' }
   let(:c) { 'c' }

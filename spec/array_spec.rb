@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Array' do
   let(:a) { 'a' }
   let(:b) { 'b' }
