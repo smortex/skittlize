@@ -17,12 +17,30 @@ RSpec.describe String do
   end
 
   describe '#skittlize' do
-    let(:subject) { string.skittlize }
+    let(:subject) { string.skittlize(options) }
 
-    it { is_expected.to eq("\033[38;5;96mHello World\033[0m") }
-    it 'should not replace the original Object' do
-      subject
-      expect(string).to eq('Hello World')
+    context 'without options' do
+      let(:options) { {} }
+
+      it { is_expected.to eq("\033[38;5;96mHello World\033[0m") }
+      it 'should not replace the original Object' do
+        subject
+        expect(string).to eq('Hello World')
+      end
+    end
+
+    context 'with :split option' do
+      let(:string) { "#{a}\n#{b}\n#{c}" }
+      let(:options) { { split: "\n" } }
+
+      it { is_expected.to eq("#{colored_a}\n#{colored_b}\n#{colored_c}") }
+    end
+
+    context 'with :split and :join option' do
+      let(:string) { "#{a}\0#{b}\0#{c}" }
+      let(:options) { { split: "\0", join: "\n" } }
+
+      it { is_expected.to eq("#{colored_a}\n#{colored_b}\n#{colored_c}") }
     end
   end
 
