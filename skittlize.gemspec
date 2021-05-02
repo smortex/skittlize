@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'skittlize/version'
@@ -11,6 +13,8 @@ Gem::Specification.new do |spec|
   spec.summary       = 'A library for coloring strings.'
   spec.homepage      = 'https://github.com/smortex/skittlize'
   spec.license       = 'MIT'
+
+  spec.required_ruby_version = 2.4
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
@@ -28,7 +32,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'github_changelog_generator'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'github_changelog_generator'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop-rspec'
 end
