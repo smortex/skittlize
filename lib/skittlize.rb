@@ -1,21 +1,19 @@
 require 'digest'
 
 class Array
-  def skittlize
+  def skittlize(options = {})
     map do |cell|
       case cell
-      when Array
-        cell.skittlize
-      when String
-        cell.skittlize
+      when Array, String
+        cell.skittlize(options)
       else
         cell
       end
     end
   end
 
-  def skittlize!
-    replace(skittlize)
+  def skittlize!(options = {})
+    replace(skittlize(options))
   end
 end
 
@@ -27,11 +25,25 @@ class String
     n
   end
 
-  def skittlize
-    "\033[38;5;#{skittle_color}m#{self}\033[0m"
+  def skittlize(options = {})
+    check_options(options)
+
+    if options[:split]
+      split(options[:split]).map(&:skittlize).join(options[:join] || options[:split])
+    else
+      "\033[38;5;#{skittle_color}m#{self}\033[0m"
+    end
   end
 
-  def skittlize!
-    replace(skittlize)
+  def skittlize!(options = {})
+    replace(skittlize(options))
+  end
+
+  private
+
+  def check_options(options)
+    extra_options = options.keys - [:split, :join]
+
+    raise "Unsupported options: #{extra_options}" if extra_options.any?
   end
 end
