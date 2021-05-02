@@ -1,8 +1,21 @@
 # Changelog
 
-## [1.1.0](https://github.com/smortex/skittlize/tree/1.1.0) (2021-01-03)
+## [v1.2.0](https://github.com/smortex/skittlize/tree/v1.2.0) (2021-05-02)
 
-[Full Changelog](https://github.com/smortex/skittlize/compare/v1.0.0...1.1.0)
+[Full Changelog](https://github.com/smortex/skittlize/compare/v1.1.0...v1.2.0)
+
+**Implemented enhancements:**
+
+- Add a test suite [\#4](https://github.com/smortex/skittlize/pull/4) ([smortex](https://github.com/smortex))
+- Allow to skittlize parts of strings [\#3](https://github.com/smortex/skittlize/pull/3) ([smortex](https://github.com/smortex))
+
+**Fixed bugs:**
+
+- Fix future-version in CHANGELOG [\#2](https://github.com/smortex/skittlize/pull/2) ([smortex](https://github.com/smortex))
+
+## [v1.1.0](https://github.com/smortex/skittlize/tree/v1.1.0) (2021-01-04)
+
+[Full Changelog](https://github.com/smortex/skittlize/compare/v1.0.0...v1.1.0)
 
 **Implemented enhancements:**
 
