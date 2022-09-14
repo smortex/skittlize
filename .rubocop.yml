@@ -2,8 +2,15 @@ AllCops:
   TargetRubyVersion: '2.4'
   CacheRootDirectory: '/tmp/skittlize-rubocop-cache'
 
+require:
+  - rubocop-rake
+  - rubocop-rspec
+
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
