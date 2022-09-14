@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
+require 'simplecov'
+
 require 'skittlize'
 
 RSpec.configure do |config|

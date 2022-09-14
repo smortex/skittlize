@@ -12,22 +12,24 @@ RSpec.describe 'Array' do
   let(:expected_target) { [colored_a, [colored_b, colored_c]] }
 
   describe '#skittlize' do
-    let(:subject) { original.skittlize }
+    subject(:process) { original.skittlize }
 
     it { is_expected.to eq(expected_target) }
-    it 'should not replace the original Object' do
-      subject
+
+    it 'does not replace the original Object' do
+      process
       expect(original).to eq(['a', ['b', 'c']])
     end
   end
 
   describe '#skittlize!' do
-    let(:subject) { original.skittlize! }
+    subject(:process) { original.skittlize! }
 
     it { is_expected.to eq(expected_target) }
-    it 'should replace the original Object' do
-      subject
-      expect(original).to_not eq(['a', ['b', 'c']])
+
+    it 'replaces the original Object' do
+      process
+      expect(original).not_to eq(['a', ['b', 'c']])
     end
   end
 end

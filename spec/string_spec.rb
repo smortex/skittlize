@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe String do
+  subject(:string) { hello_world }
+
   let(:hello_world) { 'Hello World'.dup }
   let(:a) { 'a' }
   let(:b) { 'b' }
@@ -10,8 +12,6 @@ RSpec.describe String do
   let(:colored_b) { "\033[38;5;190mb\033[0m" }
   let(:colored_c) { "\033[38;5;177mc\033[0m" }
 
-  subject(:string) { hello_world }
-
   describe '#skittle_color' do
     subject { string.skittle_color }
 
@@ -19,14 +19,15 @@ RSpec.describe String do
   end
 
   describe '#skittlize' do
-    let(:subject) { string.skittlize(options) }
+    subject(:process) { string.skittlize(options) }
 
     context 'without options' do
       let(:options) { {} }
 
       it { is_expected.to eq("\033[38;5;96mHello World\033[0m") }
-      it 'should not replace the original Object' do
-        subject
+
+      it 'does not replace the original Object' do
+        process
         expect(string).to eq('Hello World')
       end
     end
@@ -47,12 +48,13 @@ RSpec.describe String do
   end
 
   describe '#skittlize!' do
-    let(:subject) { string.skittlize! }
+    subject(:process) { string.skittlize! }
 
     it { is_expected.to eq("\033[38;5;96mHello World\033[0m") }
-    it 'should replace the original Object' do
-      subject
-      expect(string).to_not eq('Hello World')
+
+    it 'replaces the original Object' do
+      process
+      expect(string).not_to eq('Hello World')
     end
   end
 end

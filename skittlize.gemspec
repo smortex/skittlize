@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/smortex/skittlize'
   spec.license       = 'MIT'
 
-  spec.required_ruby_version = 2.4
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
@@ -36,5 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop-rake'
   spec.add_development_dependency 'rubocop-rspec'
+  spec.add_development_dependency 'simplecov'
 end
